@@ -15,6 +15,8 @@ def home():
         d['output'] = translated_text.text
         print(f"The Translated Text is: {translated_text.text}")
         return d
+    else:
+        return "Welcome to Anuvadak!!"
     
 if __name__ == '__main__':
     app.run(debug=True)

@@ -7,9 +7,9 @@ translator = Translator()
 @app.route('/',methods=['GET','POST'])
 def home():
     if request.method == 'POST':
-        source_lan = request.form['src']
-        translated_to = request.form['to']
-        inputchr = str(request.form['text'])
+        source_lan = request.json['src']
+        translated_to = request.json['to']
+        inputchr = str(request.json['text'])
         translated_text = translator.translate(inputchr, src=source_lan, dest = translated_to)
         d = {}
         d['output'] = translated_text.text
